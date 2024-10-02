@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Workadventure Map</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent appearing of scroll bars */
+        }
+
+        @font-face {
+            font-family: 'PublicPixel';
+            src: url('PublicPixel.woff2') format('woff2'), /* Super modern browsers */ url('PublicPixel.woff') format('woff'), /* Modern browsers */ url('PublicPixel.ttf') format('truetype') /* Safari, Android, iOS */
+        }
+
+        @font-face {
+            font-family: 'DB Screen Sans';
+            src: url('DBScreenSans-DigitalRegular.woff2') format('woff2'), /* Super modern browsers */ url('DBScreenSans-DigitalRegular.woff') format('woff'), /* Modern browsers */ url('DBScreenSans-DigitalRegular.ttf') format('truetype') /* Safari, Android, iOS */
+        }
+
+        .sign {
+            top: 0;
+            bottom: 0;
+            font-weight: bolder;
+            left: 0;
+            right: 0;
+            height: 17px;
+            width: 59px;
+            background-image: url("sign.png");
+            background-color: #1d62d4;
+            background-repeat: no-repeat;
+            font-size: 8px;
+            text-align: center;
+            font-family: "DB Screen Sans", sans-serif;
+            color: white;
+            line-height: 1;
+        }
+        .sign > div:first-child {
+            padding-bottom: 1px;
+        }
+        .sign > div {
+            padding: 0 2px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="sign">
+    <div id="line1">Line1</div>
+    <div id="line2">Line2</div>
+</div>
+<!-- At the end of the body to simulate $.ready() -->
+<script type="application/javascript">
+  (function () {
+    function setContentFromQueryParam(id){
+      if (queryParams[id]) {
+        document.getElementById(id).textContent = queryParams[id]
+      } else {
+        document.getElementById(id).textContent = ''
+      }
+    }
+
+    const queryParams = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    })
+
+    setContentFromQueryParam("line1")
+    setContentFromQueryParam("line2")
+
+  })()
+</script>
+</body>
+</html>

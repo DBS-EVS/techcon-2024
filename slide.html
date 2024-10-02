@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>slidesync embed</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100%;
+      background-color: white;
+    }
+
+    @font-face {
+      font-family: 'DB Screen Sans';
+      src: url('DBScreenSans-DigitalRegular.woff2') format('woff2'),
+        /* Super modern browsers */
+        url('DBScreenSans-DigitalRegular.woff') format('woff'),
+        /* Modern browsers */
+        url('DBScreenSans-DigitalRegular.ttf') format('truetype')
+        /* Safari, Android, iOS */
+    }
+
+    .notify {
+      color: black;
+      padding: 15px;
+      text-align: center;
+      font-size: medium;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      font-family: "DB Screen Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .notify a {
+      color: #282d37;
+    }
+
+    .notify h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="notify" id="notify">
+    <h1>Du siehst nichts?</h1>
+    <p>Kein Problem 😊</p>
+    <p>Zuerst <a href="#" target="_blank" id="eventlink">hier klicken</a>, WebSSO authentifizieren und neuen Browser-Tab
+      wieder schließen!</p>
+  </div>
+  <script type="application/javascript">
+    const queryParams = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    })
+    const eventurl = "https://slidesync.com/" + queryParams['event'];
+    function reload() {
+      window.location.href = eventurl + "?embed=true";
+    }
+    lnk = document.getElementById('eventlink');
+    lnk.href = eventurl;
+    setTimeout(reload, 5000);
+  </script>
+</body>
+
+</html>

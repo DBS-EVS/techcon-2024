@@ -1,0 +1,71 @@
+{
+    "tafel": {
+        "misc": {
+            "header": "DB TechCon 2024: Markstände",
+            "gelbeLeiste":{
+                "col1":"Zeit",
+                "col2":"Ziel",
+                "col3":"Plattform"
+            },
+            "unterschrift":"",
+            "links": []
+        },
+        "content": [
+            {"eintrag": {
+                "col1":{
+                    "zeit":"14:00 - 18:00",
+                    "zugnummer":"Mo - Mi"
+                },
+                "col2": "Tägliches Beratungsangebot\nIm Raum \"Dein Einstieg bei der DB\"",
+                "col3":{
+                    "to":"https://coremeet.workadventu.re/c1ncu2-beratungscounter",
+                    "title":"Beratungscounter"
+                }
+            }},
+            {"eintrag": {
+                "col1":{
+                    "zeit":"10:00 - 14:00",
+                    "zugnummer":"Do - Fr"
+                },
+                "col2": "Tägliches Beratungsangebot\nIm Raum \"Dein Einstieg bei der DB\"",
+                "col3":{
+                    "to":"https://coremeet.workadventu.re/c1ncu2-beratungscounter",
+                    "title":"Beratungscounter"
+                }
+            }},
+            {"eintrag": {
+                "col1":{
+                    "zeit":"18:00 - 19:00",
+                    "zugnummer":"05.10.2023"
+                },
+                "col2": "Infoabend für Eltern und Lehrkräfte",
+                "col3":{
+                    "to":"https://coremeet.workadventu.re/c1ncu2-networking-lounge",
+                    "title":"Networking Lounge"
+                }
+            }},
+            {"eintrag": {
+                "col1":{
+                    "zeit":"16:00 - 17:00",
+                    "zugnummer":"11.10.2023"
+                },
+                "col2": "Frag die Azubis - Ein Blick hinter die Kulissen bei der DB!",
+                "col3":{
+                    "to":"https://coremeet.workadventu.re/c1ncu2-networking-lounge",
+                    "title":"Networking Lounge"
+                }
+            }},
+            {"eintrag": {
+                "col1":{
+                    "zeit":"17:30 - 19:00",
+                    "zugnummer":"11.10.2023"
+                },
+                "col2": "Frag die Dualis - Ein Blick hinter die Kulissen bei der DB!",
+                "col3":{
+                    "to":"https://coremeet.workadventu.re/c1ncu2-networking-lounge",
+                    "title":"Networking Lounge"
+                }
+            }}
+        ]
+    }
+}

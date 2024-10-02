@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite | Microsoft 265</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <script>
+        function captcha() {
+            Number = document.getElementById("id_textfield_captcha").value;
+            if(Number == 265){
+                document.getElementById("captchabackground").style.display = "none";
+                document.getElementById("mainpage").style.display = "contents";
+            } else if(Number != 265) {
+                document.getElementById("wrong").innerHTML = "Das eingegebene Captcha ist falsch.";
+            }
+
+            document.getElementById("captchabackground").ondragstart = function() { return false; };
+        }
+
+        function profile() {
+            document.getElementById("zoompp").style.display = "block";
+            document.getElementById("moritzpp").style.display = "flex";
+        }
+
+        function profileoff() {
+            document.getElementById("zoompp").style.display = "none";
+            document.getElementById("moritzpp").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <!-- Start der Captcha Seite -->
+    <div id="captchabackground">
+        <img id="backgroundimage" src="Images/img_background.jpeg">
+        <div id="captchapopup">
+            <img id="microsoftlogo" src="Images/img_microsoftlogo.png">
+
+            <h3>Bestätigen Sie Ihre Identität</h1>
+
+            <p>Das Captcha verhindert den Zugriff von Bots und<br> schützt die Seite vor Missbrauch und Überlastung.
+            <br>Geben Sie bitte die nachfolgenden drei Ziffern an.</p>
+            <div>
+                <img id="captchaimage" src="Images/img_captcha.png">
+                <p>Bitte geben Sie das Captcha an:</p>
+                <input id="id_textfield_captcha" style="height: 40px; width: 200px; position: relative; top: -13px;" type="text" name="textfield_captcha">
+                <input id="submit" src="Images/button_verify.png" width="150px" style="margin-left: 20px;" type="image" alt="Übermitteln" onclick="captcha()" maxlength="3">
+            <p id="wrong" style="margin-top: -10px; color: #BB0000;"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start der O265 Seite -->
+    <div id="mainpage">
+        <div id="header">
+            <img id="menu" src="Images/icon_menu.svg">
+            <img id="DB" src="Images/Deutsche_Bahn_AG-Logo.svg">
+            <p id="m265_title">Microsoft 265</p>
+            <img id="searchbar" src="Images/img_search.png">
+            <input id="profile" src="Images/img_profile.png" type="image" onclick="profile()">
+        </div>
+
+        <div id="sidebar">
+            <img id="img_sidebar" src="Images/img_sidebar.png">
+        </div>
+        <div id="content">
+
+            <h1>Willkommen bei Microsoft 265</h1>
+
+            <h2>Empfohlen</h2>
+
+            <div id="popup">
+                <img id="imgmessage" src="Images/img_maxmaulwurf.png">
+                <p id="nameandaction"><strong>Max Maulwurf</strong> hat dir eine Nachricht gesendet.</p>
+                <p id="messagedate">Gestern um 02:65</p>
+
+                <p id="message">Lieber Moritz,<br>
+
+                <br>Auch wenn ich nicht mehr an deiner Seite weile, spüre ich noch immer den Drang, dir zu helfen.<br> Die Zeit vergeht anders hier, wo ich bin, aber ich sehe klarer als je zuvor. Dein Weg ist noch lang, und ich weiß, dass du nach Antworten suchst. 
+                
+                <br>Erinnere dich an Jan Götze. Sein aufgenommenes Wort führt dich weiter, aber nicht auf den ersten Blick. Höre genau hin, doch sieh vor allem dorthin, wo man sonst nie schaut – zwischen den Zeilen seines letzten Werkes. 
+                
+                <br>Lebe dein Leben, mein Bruder.<br>Für uns beide.<br>
+                
+                <br>Max Maulwurf</p>
+            </div>
+
+            <img id="recentfiles" src="Images/img_schnellzugriff.png">
+            <img id="date" src="Images/img_datum.png">
+            <img id="notes" src="Images/img_notes.png">
+        </div>
+    </div>
+
+    <div id="zoompp" onclick="profileoff()">
+    </div>
+    <img id="moritzpp" src="Images/img_moritzmaulwurf.png" onclick="profileoff()">
+
+</body>
+</html>
